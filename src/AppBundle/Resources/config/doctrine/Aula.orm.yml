@@ -1,0 +1,26 @@
+AppBundle\Entity\Aula:
+    type: entity
+    table: aula
+    id:
+        idAula:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Aula
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+        activa:
+            type: boolean
+            nullable: false
+            column: Activa
+    lifecycleCallbacks: {  }

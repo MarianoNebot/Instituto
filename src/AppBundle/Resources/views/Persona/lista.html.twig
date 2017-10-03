@@ -1,0 +1,29 @@
+{% extends 'default/index.html.twig' %}
+
+{% block body %}
+
+<h2>lista de personas </h2>
+
+<table class="table">
+    <th>ID</th>
+    <th>APELLIDO - NOMBRE</th>
+    <th>DOMICILIO</th>
+    <th>CORREO ELECTRONICO</th>
+    <th> </th>
+{% for persona in Personas %}
+  <tr>
+    <td>{{ persona.idPersona }}</td>
+    <td>{{ persona.apellido }} - {{ persona.nombres }}</td>
+    <td>{{ persona.domicilio }}</td>
+    <td>{{ persona.correoElectronico }}</td>
+    <td>
+    <a type="button" class="btn btn-primary" href="{{ path('editar', {idPersona: persona.idPersona}) }}"> EDITAR </a>
+    </td>
+    <td>
+    <a type="button" class="btn btn-primary" href="{{ path('eliminar', {idPersona: persona.idPersona}) }}"> ELIMINAR </a>
+    </td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

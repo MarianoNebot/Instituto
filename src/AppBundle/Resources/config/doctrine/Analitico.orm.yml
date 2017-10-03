@@ -1,0 +1,65 @@
+AppBundle\Entity\Analitico:
+    type: entity
+    table: analitico
+    indexes:
+        Alumno_ID:
+            columns:
+                - Alumno_ID
+        Materia_ID:
+            columns:
+                - Materia_ID
+    id:
+        idAnalitico:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Analitico
+            generator:
+                strategy: IDENTITY
+    fields:
+        nota:
+            type: float
+            nullable: false
+            precision: 2
+            scale: 2
+            column: Nota
+        fecha:
+            type: date
+            nullable: false
+            column: Fecha
+        folio:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Folio
+        libro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Libro
+    manyToOne:
+        materia:
+            targetEntity: Materia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Materia_ID:
+                    referencedColumnName: ID_Materia
+            orphanRemoval: false
+        alumno:
+            targetEntity: Alumno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Alumno_ID:
+                    referencedColumnName: ID_Alumno
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

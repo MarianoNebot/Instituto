@@ -1,0 +1,37 @@
+AppBundle\Entity\Provincia:
+    type: entity
+    table: provincia
+    indexes:
+        Pais_ID:
+            columns:
+                - Pais_ID
+    id:
+        idProvincia:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Provincia
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+    manyToOne:
+        pais:
+            targetEntity: Pais
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Pais_ID:
+                    referencedColumnName: ID_Pais
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

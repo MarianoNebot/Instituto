@@ -1,0 +1,26 @@
+AppBundle\Entity\Estadocivil:
+    type: entity
+    table: estadocivil
+    id:
+        idEstadocivil:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_EstadoCivil
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+    lifecycleCallbacks: {  }

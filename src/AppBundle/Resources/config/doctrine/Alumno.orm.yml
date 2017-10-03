@@ -1,0 +1,62 @@
+AppBundle\Entity\Alumno:
+    type: entity
+    table: alumno
+    indexes:
+        Persona_ID:
+            columns:
+                - Persona_ID
+    uniqueConstraints:
+        ID_Alumno:
+            columns:
+                - ID_Alumno
+    id:
+        idAlumno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Alumno
+            generator:
+                strategy: IDENTITY
+    fields:
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+        trabaja:
+            type: boolean
+            nullable: false
+            column: Trabaja
+        actividad:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Actividad
+        obraSocial:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Obra_Social
+        numeroRegistro:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Numero_Registro
+    manyToOne:
+        persona:
+            targetEntity: Persona
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Persona_ID:
+                    referencedColumnName: ID_Persona
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,22 @@
+AppBundle\Entity\Pais:
+    type: entity
+    table: pais
+    id:
+        idPais:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Pais
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+    lifecycleCallbacks: {  }

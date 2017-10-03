@@ -1,0 +1,55 @@
+AppBundle\Entity\Docente:
+    type: entity
+    table: docente
+    indexes:
+        Persona_ID:
+            columns:
+                - Persona_ID
+    id:
+        idDocente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Docente
+            generator:
+                strategy: IDENTITY
+    fields:
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+        foja:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Foja
+        numeroRegistro:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Numero_Registro
+        certificadoActitudFisica:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Certificado_Actitud_Fisica
+    manyToOne:
+        persona:
+            targetEntity: Persona
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Persona_ID:
+                    referencedColumnName: ID_Persona
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

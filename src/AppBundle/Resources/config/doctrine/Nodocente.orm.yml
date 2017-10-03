@@ -1,0 +1,34 @@
+AppBundle\Entity\Nodocente:
+    type: entity
+    table: nodocente
+    indexes:
+        Persona_ID:
+            columns:
+                - Persona_ID
+    id:
+        idNodocente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_NoDocente
+            generator:
+                strategy: IDENTITY
+    fields:
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+    manyToOne:
+        persona:
+            targetEntity: Persona
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Persona_ID:
+                    referencedColumnName: ID_Persona
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

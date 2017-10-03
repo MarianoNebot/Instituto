@@ -1,0 +1,42 @@
+AppBundle\Entity\Correlatividad:
+    type: entity
+    table: correlatividad
+    indexes:
+        Materia1_ID:
+            columns:
+                - Materia1_ID
+        Materia2_ID:
+            columns:
+                - Materia2_ID
+    id:
+        idCorrelatividad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Correlatividad
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        materia1:
+            targetEntity: Materia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Materia1_ID:
+                    referencedColumnName: ID_Materia
+            orphanRemoval: false
+        materia2:
+            targetEntity: Materia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Materia2_ID:
+                    referencedColumnName: ID_Materia
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

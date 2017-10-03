@@ -1,0 +1,37 @@
+AppBundle\Entity\Localidad:
+    type: entity
+    table: localidad
+    indexes:
+        Provincia_ID:
+            columns:
+                - Provincia_ID
+    id:
+        idLocalidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Localidad
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+    manyToOne:
+        provincia:
+            targetEntity: Provincia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Provincia_ID:
+                    referencedColumnName: ID_Provincia
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

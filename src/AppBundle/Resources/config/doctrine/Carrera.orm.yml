@@ -1,0 +1,52 @@
+AppBundle\Entity\Carrera:
+    type: entity
+    table: carrera
+    id:
+        idCarrera:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Carrera
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+        duracion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Duracion
+        resolucion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Resolucion
+        plan:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Plan
+        activa:
+            type: boolean
+            nullable: false
+            column: Activa
+        tituloOtorgado:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Titulo_Otorgado
+    lifecycleCallbacks: {  }

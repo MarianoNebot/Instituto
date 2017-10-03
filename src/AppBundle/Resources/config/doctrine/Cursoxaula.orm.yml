@@ -1,0 +1,47 @@
+AppBundle\Entity\Cursoxaula:
+    type: entity
+    table: cursoxaula
+    indexes:
+        Curso_ID:
+            columns:
+                - Curso_ID
+        Aula_ID:
+            columns:
+                - Aula_ID
+    id:
+        idCursoxaula:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Cursoxaula
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: false
+            column: Fecha
+    manyToOne:
+        curso:
+            targetEntity: Curso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Curso_ID:
+                    referencedColumnName: ID_Curso
+            orphanRemoval: false
+        aula:
+            targetEntity: Aula
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Aula_ID:
+                    referencedColumnName: ID_Aula
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

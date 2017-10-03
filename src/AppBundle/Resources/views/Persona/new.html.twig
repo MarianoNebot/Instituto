@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="{{asset('css/stylesIngresoAv3.css')}}">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900" rel="stylesheet">
+
+	<title>Ingreso Alumno</title>
+
+</head>
+
+<body>
+
+
+	<div class="contenedor-grid">
+
+		<div class="grid-item ws"></div>
+
+		<div class="grid-item form1">
+
+			<!--                    --- form1 ------>
+			<div class="contenedor-form1">
+
+				<div class="form1">
+					<label class="apellido" for="formapellido">APELLIDO</label>
+					<input type="text" id="form.apellido" autofocus required>
+
+					<div class="input-border "></div>
+
+					<label class="nombre" for="formnombre">NOMBRE</label>
+                    <input type="text" id="form.nombres" required>
+					<br/>
+
+					<div class="input-border"></div>
+
+					<label for="formdni">DNI</label>
+					<input type="number" id="form.numeroDocumento" required>
+
+					<div class="input-border"></div>
+
+					<label for="formdomicilio">DOMICILIO</label>
+					<input type="text" id="form.domicilio" required>
+					<br/>
+
+					<label for="formlocalidad">LOCALIDAD</label>
+					<input type="text" id="form.resiLocalidad">
+					<br/>
+
+					<label for="formtelefono">TELEFONO</label>
+					<input type="number" id="form.telefono" required>
+					<br/>
+
+					<label for="formemail">EMAIL</label>
+					<input type="email" name="email" id="form.correoElectronico" required autocomplete="email" required>
+					<br/>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<!----- form 2 -------->
+
+
+		<div class="grid-item form2">
+
+
+			<div class="contenedor-form2">
+				<div class="form2">
+
+					<label for="formfnac">FECHA DE NACIMIENTO</label>
+					<input type="date" id="form.fechaNacimiento">
+					<br/>
+
+
+					<label for="formnacion">NACIONALIDAD</label>
+					<input type="text" id="form.resiPais">
+					<br/>
+
+					<label for="formecivil">ESTADO CIVIL</label>
+					<input type="text" id="form.estadoCivil">
+					<br/>
+
+					<label for="formgenero">GENERO</label>
+					<input type="text" id="form.genero">
+					<br/>
+
+					<label for="formcarrera">CARRERA</label>
+					<input list="carrera" id="formcarrera" name="carrera" required>
+					<datalist id="carrera">
+<option value="Profesorado de Biología">
+<option value="Profesorado de Física">
+<option value="Profesorado de Inglés">
+<option value="Profesorado en Educación Especial">
+<option value="Profesorado en Educación Primaria">
+<option value="Profesorado de Educación Secundaria de la Modalidad Técnico Profesional">
+<option value="Tecnicatura en Administración General">
+<option value="Tec. Sup. en Análisis, Desarrollo y Programación de Aplicaciones">
+<option value="Tecnicatura en Higiene y Seguridad en el Trabajo">
+<option value="Tecnicatura Superior en Enfermería">
+<option value="Tecnicatura Superior en Industria Textil e Indumentaria">
+</datalist>
+
+					<label for="cohorte">COHORTE</label>
+					<span>2017</span>
+                    <br>
+                    <button type="submit" name="saveAndAdd" value="submit" class="btn btn-default">Save and Add</button>
+				</div>
+			</div>
+
+
+		</div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-primary" type="submit">Registrar</button>
+        </div>
+    </div>
+
+
+
+		<!--       --- menui ----->
+
+		<div class="grid-item menui">
+
+			<div class="menui">
+				<div class="menui title">
+					<h2>Inicio</h2>
+				</div>
+
+				<div class="menui menumain">
+					<ul>
+						<li><a href="">CARRERAS</a></li>
+						<li><a href="">CONTACTO</a></li>
+						<li><a href="">BUSCAR</a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!----- nav ----->
+
+		<div class="grid-item nav">
+
+			<div class="nav">
+				<div class="logohome">
+					<a href="#">
+                    <img class="image" src="{{asset('img/logotipo.png')}}" alt="escudo">
+                </a>
+				</div>
+
+			</div>
+
+
+			<!--  <input class="buscador"  type="text" name="search">-->
+
+
+		</div>
+
+</div>
+
+
+</body>
+
+</html>

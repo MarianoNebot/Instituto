@@ -1,0 +1,119 @@
+{% extends 'default/index.html.twig' %}
+
+{% block body %}
+
+<h2>editar</h2>
+
+{{ form_start(form) }}
+
+<div class="form-horizontal">
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.apellido)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.apellido) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.nombres)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.nombres) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.numeroDocumento)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.numeroDocumento) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.domicilio)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.domicilio) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.fechaNacimiento)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.fechaNacimiento) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.telefono)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.telefono) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.celular)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.celular) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.correoElectronico)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.correoElectronico) }} </div>
+        <div class="col-md-10"> {{ form_errors(form.correoElectronico) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.activo)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.activo) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.nacProvincia)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.nacProvincia) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.estadoCivil)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.estadoCivil) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.resiProvincia)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.resiProvincia) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.genero)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.genero) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.resiLocalidad)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.resiLocalidad) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.nacLocalidad)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.nacLocalidad) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.resiPais)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.resiPais) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.nacPais)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.nacPais) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.tipoDocum)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.tipoDocum) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.resiPais)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.resiPais) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+</div>
+
+{{ form_end(form) }}
+
+{% endblock %}

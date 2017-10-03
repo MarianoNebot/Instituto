@@ -1,0 +1,77 @@
+AppBundle\Entity\Titulo:
+    type: entity
+    table: titulo
+    indexes:
+        Persona_ID:
+            columns:
+                - Persona_ID
+    id:
+        idTitulo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Titulo
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreTitulo:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Nombre_Titulo
+        lugarEstudio:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Lugar_Estudio
+        duracion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Duracion
+        finalizo:
+            type: boolean
+            nullable: false
+            column: Finalizo
+        fechaEgreso:
+            type: date
+            nullable: false
+            column: Fecha_Egreso
+        porcentajeCarrera:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Porcentaje_Carrera
+        promedio:
+            type: float
+            nullable: false
+            precision: 2
+            scale: 2
+            column: Promedio
+        distrito:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Distrito
+    manyToOne:
+        persona:
+            targetEntity: Persona
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Persona_ID:
+                    referencedColumnName: ID_Persona
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

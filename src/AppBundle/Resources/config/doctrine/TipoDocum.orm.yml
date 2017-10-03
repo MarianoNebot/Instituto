@@ -1,0 +1,26 @@
+AppBundle\Entity\TipoDocum:
+    type: entity
+    table: tipo_docum
+    id:
+        idTipoDocum:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Tipo_Docum
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+        a:
+            type: boolean
+            nullable: false
+            column: A
+    lifecycleCallbacks: {  }

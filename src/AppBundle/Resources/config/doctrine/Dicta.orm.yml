@@ -1,0 +1,58 @@
+AppBundle\Entity\Dicta:
+    type: entity
+    table: dicta
+    indexes:
+        Curso_ID:
+            columns:
+                - Curso_ID
+        Docente_ID:
+            columns:
+                - Docente_ID
+    id:
+        idDicta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Dicta
+            generator:
+                strategy: IDENTITY
+    fields:
+        situacionRevista:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Situacion_Revista
+        fechaDesde:
+            type: date
+            nullable: false
+            column: Fecha_Desde
+        fechaHasta:
+            type: date
+            nullable: false
+            column: Fecha_Hasta
+    manyToOne:
+        docente:
+            targetEntity: Docente
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Docente_ID:
+                    referencedColumnName: ID_Docente
+            orphanRemoval: false
+        curso:
+            targetEntity: Curso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Curso_ID:
+                    referencedColumnName: ID_Curso
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

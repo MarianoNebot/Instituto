@@ -1,0 +1,229 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration-line: none;
+}
+
+.ws {
+	grid-area: ws;
+	background-color: whitesmoke;
+}
+
+.form1 {
+	grid-area: form1;
+	background-color: white;
+
+}
+
+.form2 {
+	grid-area: form2;
+	background-color: white;
+}
+
+.menui {
+	grid-area: menui;
+	background-color: whitesmoke;
+}
+
+.nav {
+	grid-area: navbar;
+	background-color: snow;
+}
+
+
+
+.contenedor-grid {
+	display: grid;
+	grid-gap: 2px;
+	grid-template-areas: "ws" "form1" "form2" "menui" "navbar";
+}
+
+@media (min-width: 640px) {
+	.contenedor-grid {
+		display: grid;
+		grid-template-columns: 7% 1fr 1fr 17%;
+		grid-template-rows: 900px 90px;
+		background-color: whitesmoke;
+		padding: 2.5%;
+		grid-template-areas: "ws form1 form2 menui" "navbar navbar navbar navbar";
+	}
+}
+
+/*------ form1 ----*/
+
+.form1 {
+	padding: 4em 1em 1em 5em;
+}
+
+.form2 {
+	padding: 4em 1em 1em 5em;
+}
+
+label {
+	display: block;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	font-size: 1em;
+	color: #CE2C1B;
+	text-align: left;
+	line-height: 2em;
+
+}
+
+#formapellido,
+#formnombre {
+	text-transform: capitalize;
+	grid-column: 2;
+	grid-row: 1;
+	font-weight: 700;
+	font-size: 3em;
+}
+
+
+#formdomicilio,
+#formlocalidad,
+#formnacion,
+#formecivil,
+#formgenero,
+#formcarrera {
+	text-transform: capitalize;
+	text-overflow: ellipsis;
+}
+
+input,
+textarea {
+	font-family: 'Raleway', Arial, sans-serif;
+	font-size: 2em;
+	color: #162B8D;
+	margin-left: 0;
+	margin-bottom: 3px;
+	/* text fields */
+	width: 500px;
+	box-sizing: border-box;
+	/* text field borde  */
+	border: 0px solid #999;
+	/*    border-bottom-width: 3px;*/
+	outline-width: 0;
+	text-overflow: ellipsis;
+}
+
+span {
+	font-family: 'Raleway', Arial, sans-serif;
+	color: #162B8D;
+	margin-left: 0;
+	font-weight: 700;
+	font-size: 5em;
+	padding: 0;
+	margin: 0;
+}
+
+----- .grid-item .menui {
+	display: grid;
+	/*    grid-template-rows: 3fr 1fr;*/
+	grid-area: menui;
+	/*    grid-row-gap: 1em;*/
+	background-color: #f0f2f3;
+	font-family: 'Raleway', sans-serif;
+	text-decoration-line: none;
+	font-weight: 900;
+	text-align: right;
+}
+
+.title {
+	/*    grid-row: 1 / 2;*/
+	font-weight: 900;
+	font-size: 1.4em;
+	color: #CE2C1B;
+	text-align: right;
+}
+
+.grid-item .menui ul li {
+	/*    grid-row: 2 / 3;*/
+	font-size: 1.22em;
+	color: #162B8D;
+	list-style: none;
+	text-decoration: none;
+	/*    line-height: 5em;*/
+	text-align: right;
+}
+
+.menui a:hover {
+	color: #CE2C1B;
+}
+
+.menui a:active {
+	color: #CE2C1B;
+}
+
+.menui a::selection {
+	color: white;
+	background: blue;
+}
+
+.grid-item .nav {
+	box-sizing: border-box;
+	grid-area: navbar;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-start: 1;
+	grid-column-end: 12;
+	background-color: #162B8D;
+	/*    color: darkred;*/
+	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.70);
+	-moz-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.70);
+	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.70);
+	color: #CE2C1B;
+	transition: all 0.35s ease-in-out;
+	z-index: 3;
+	/*
+    grid-area: navbar;
+    background-color: #162B8D;
+    font-family: 'Raleway', sans-serif;
+    text-decoration-line: none;
+    text-align: center;
+*/
+}
+
+.logohome {
+	grid-area: home;
+	grid-column: 1 /4;
+	grid-row: 1;
+	background-color: #162B8D;
+	/*    height: 8em;*/
+	/*    margin-top: -1em;*/
+	-webkit-box-shadow: 8px 15px 30px rgba(0, 0, 0, 0.70);
+	-moz-box-shadow: 8px 15px 30px rgba(0, 0, 0, 0.70);
+	box-shadow: 8px 15px 30px rgba(0, 0, 0, 0.70);
+	transition: all 0.3s ease;
+	z-index: 2;
+}
+
+.image a {
+	width: 440px;
+	height: 112px;
+	border: 0;
+}
+
+/*
+.buscador input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: red;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding:/ 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+
+.buscador input[type=text]:focus {
+    width: 100%;
+}
+*/

@@ -1,0 +1,51 @@
+AppBundle\Entity\Asistencia:
+    type: entity
+    table: asistencia
+    indexes:
+        Curso_ID:
+            columns:
+                - Curso_ID
+        Alumno_ID:
+            columns:
+                - Alumno_ID
+    id:
+        idAsistencia:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Asistencia
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: false
+            column: Fecha
+        asistencia:
+            type: boolean
+            nullable: false
+            column: Asistencia
+    manyToOne:
+        curso:
+            targetEntity: Curso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Curso_ID:
+                    referencedColumnName: ID_Curso
+            orphanRemoval: false
+        alumno:
+            targetEntity: Alumno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Alumno_ID:
+                    referencedColumnName: ID_Alumno
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

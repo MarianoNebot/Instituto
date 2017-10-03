@@ -1,0 +1,51 @@
+AppBundle\Entity\Curso:
+    type: entity
+    table: curso
+    indexes:
+        Materia_ID:
+            columns:
+                - Materia_ID
+        Carrera_ID:
+            columns:
+                - Carrera_ID
+    id:
+        idCurso:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Curso
+            generator:
+                strategy: IDENTITY
+    fields:
+        anio:
+            type: date
+            nullable: false
+            column: Anio
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+    manyToOne:
+        carrera:
+            targetEntity: Carrera
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Carrera_ID:
+                    referencedColumnName: ID_Carrera
+            orphanRemoval: false
+        materia:
+            targetEntity: Materia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Materia_ID:
+                    referencedColumnName: ID_Materia
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

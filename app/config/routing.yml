@@ -1,0 +1,19 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+Persona:
+    path: /Persona
+    defaults: { _controller: AppBundle:Persona:index}
+
+Persona_new:
+    path: /Persona/new
+    defaults: { _controller: AppBundle:Persona:new}
+
+Persona_lista:
+    path: /Persona/lista
+    defaults: { _controller: AppBundle:Persona:lista}
+
+Persona_edit:
+    path: /Persona/editar
+    defaults: { _controller: AppBundle:Persona:edit}

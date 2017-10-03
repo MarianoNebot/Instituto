@@ -1,0 +1,42 @@
+AppBundle\Entity\Cursoxhorario:
+    type: entity
+    table: cursoxhorario
+    indexes:
+        Horario_ID:
+            columns:
+                - Horario_ID
+        Curso_ID:
+            columns:
+                - Curso_ID
+    id:
+        idCursoxhorario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Cursoxhorario
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        horario:
+            targetEntity: Horario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Horario_ID:
+                    referencedColumnName: ID_Horario
+            orphanRemoval: false
+        curso:
+            targetEntity: Curso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Curso_ID:
+                    referencedColumnName: ID_Curso
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

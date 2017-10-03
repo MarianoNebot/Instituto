@@ -1,0 +1,60 @@
+AppBundle\Entity\Tablanota:
+    type: entity
+    table: tablanota
+    indexes:
+        Alumno_ID:
+            columns:
+                - Alumno_ID
+        Materia_ID:
+            columns:
+                - Materia_ID
+    id:
+        idNota:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Nota
+            generator:
+                strategy: IDENTITY
+    fields:
+        nota:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Nota
+        tipoEvaluacion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Tipo_Evaluacion
+        fecha:
+            type: date
+            nullable: false
+            column: Fecha
+    manyToOne:
+        alumno:
+            targetEntity: Alumno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Alumno_ID:
+                    referencedColumnName: ID_Alumno
+            orphanRemoval: false
+        materia:
+            targetEntity: Materia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Materia_ID:
+                    referencedColumnName: ID_Materia
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

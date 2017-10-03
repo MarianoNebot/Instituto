@@ -1,0 +1,190 @@
+AppBundle\Entity\Persona:
+    type: entity
+    table: persona
+    indexes:
+        Resi_Localidad_ID:
+            columns:
+                - Resi_Localidad_ID
+        Resi_Provincia_ID:
+            columns:
+                - Resi_Provincia_ID
+        Resi_Pais_ID:
+            columns:
+                - Resi_Pais_ID
+        Nac_Pais_ID:
+            columns:
+                - Nac_Pais_ID
+        Nac_Localidad_ID:
+            columns:
+                - Nac_Localidad_ID
+        Nac_Provincia_ID:
+            columns:
+                - Nac_Provincia_ID
+        Genero_ID:
+            columns:
+                - Genero_ID
+        Tipo_Docum_ID:
+            columns:
+                - Tipo_Docum_ID
+        estado_civil_ID:
+            columns:
+                - estado_civil_ID
+    id:
+        idPersona:
+            type: integer
+            nullable: false
+            options:
+                    unsigned: false
+            id: true
+            column: ID_Persona
+            generator:
+                    strategy: IDENTITY
+    fields:
+        apellido:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Apellido
+        nombres:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Nombres
+        numeroDocumento:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Numero_Documento
+        domicilio:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Domicilio
+        fechaNacimiento:
+            type: date
+            nullable: false
+            column: Fecha_Nacimiento
+        telefono:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                unsigned: false
+            column: Telefono
+        celular:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                unsigned: false
+            column: Celular
+        correoElectronico:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Correo_Electronico
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+    manyToOne:
+        nacProvincia:
+            targetEntity: Provincia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Nac_Provincia_ID:
+                    referencedColumnName: ID_Provincia
+            orphanRemoval: false
+        estadoCivil:
+            targetEntity: Estadocivil
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                estado_civil_ID:
+                    referencedColumnName: ID_EstadoCivil
+            orphanRemoval: false
+        resiProvincia:
+            targetEntity: Provincia
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Resi_Provincia_ID:
+                    referencedColumnName: ID_Provincia
+            orphanRemoval: false
+        genero:
+            targetEntity: Genero
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Genero_ID:
+                    referencedColumnName: ID_Genero
+            orphanRemoval: false
+        resiLocalidad:
+            targetEntity: Localidad
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Resi_Localidad_ID:
+                    referencedColumnName: ID_Localidad
+            orphanRemoval: false
+        nacLocalidad:
+            targetEntity: Localidad
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Nac_Localidad_ID:
+                    referencedColumnName: ID_Localidad
+            orphanRemoval: false
+        resiPais:
+            targetEntity: Pais
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Resi_Pais_ID:
+                    referencedColumnName: ID_Pais
+            orphanRemoval: false
+        nacPais:
+            targetEntity: Pais
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Nac_Pais_ID:
+                    referencedColumnName: ID_Pais
+            orphanRemoval: false
+        tipoDocum:
+            targetEntity: TipoDocum
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Tipo_Docum_ID:
+                    referencedColumnName: ID_Tipo_Docum
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

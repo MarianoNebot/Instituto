@@ -1,0 +1,50 @@
+AppBundle\Entity\Cursa:
+    type: entity
+    table: cursa
+    indexes:
+        Alumno_ID:
+            columns:
+                - Alumno_ID
+        Curso_ID:
+            columns:
+                - Curso_ID
+    id:
+        idCursa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Cursa
+            generator:
+                strategy: IDENTITY
+    fields:
+        condicion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Condicion
+    manyToOne:
+        alumno:
+            targetEntity: Alumno
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Alumno_ID:
+                    referencedColumnName: ID_Alumno
+            orphanRemoval: false
+        curso:
+            targetEntity: Curso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Curso_ID:
+                    referencedColumnName: ID_Curso
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,22 @@
+AppBundle\Entity\Genero:
+    type: entity
+    table: genero
+    id:
+        idGenero:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Genero
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+    lifecycleCallbacks: {  }

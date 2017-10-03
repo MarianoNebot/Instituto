@@ -1,0 +1,21 @@
+{% extends 'default/index.html.twig' %}
+
+{% block body %}
+
+<h2>Alta Estado Civil</h2>
+{{ form_start(form) }}
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.descripcion)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.descripcion) }} </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2"> {{form_label(form.activo)}} </div>
+        <div class="col-md-10"> {{ form_widget(form.activo) }} </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Registrar</button>
+{{ form_end(form) }}
+
+{% endblock %}

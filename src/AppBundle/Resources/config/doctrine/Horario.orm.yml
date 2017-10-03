@@ -1,0 +1,27 @@
+AppBundle\Entity\Horario:
+    type: entity
+    table: horario
+    id:
+        idHorario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Horario
+            generator:
+                strategy: IDENTITY
+    fields:
+        dia:
+            type: date
+            nullable: false
+            column: Dia
+        hora:
+            type: time
+            nullable: false
+            column: Hora
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+    lifecycleCallbacks: {  }

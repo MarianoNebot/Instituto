@@ -1,0 +1,60 @@
+AppBundle\Entity\Materia:
+    type: entity
+    table: materia
+    indexes:
+        Carrera_ID:
+            columns:
+                - Carrera_ID
+    id:
+        idMateria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_Materia
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Descripcion
+        cantModulos:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Cant_Modulos
+        anioCursada:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Anio_Cursada
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+        cupof:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Cupof
+    manyToOne:
+        carrera:
+            targetEntity: Carrera
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Carrera_ID:
+                    referencedColumnName: ID_Carrera
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

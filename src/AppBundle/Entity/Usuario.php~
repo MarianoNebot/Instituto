@@ -1,0 +1,49 @@
+<?php
+
+namespace AppBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Usuario
+ */
+class Usuario
+{
+    /**
+     * @var integer
+     */
+    private $idUsuario;
+
+    /**
+     * @Assert\Length(
+     *      min = 6
+     *      minMessage = "Tu contraseña debe tener al menos {{ limit }} caracteres"
+     * )
+     * @var string 
+     */
+    private $contraseña;
+
+    /**
+     * @var string
+     */
+    private $correoElectronico;
+
+    /**
+     * @var string
+     */
+    
+    private $roles;
+    
+    /**
+     * @var integer
+     */
+    
+    private $Nro_Registro;
+    
+    /**
+     * @var string
+     */
+    
+    private $Nom_Usu;
+    
+}
+
